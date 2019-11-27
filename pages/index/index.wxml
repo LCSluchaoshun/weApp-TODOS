@@ -1,0 +1,27 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="inputBox">
+    <image src="../../images/加号.svg" bindtap="addTodoHandle"></image>
+    <input type="text" confirm-type placeholder="添加你的任务吧。。。" value="{{inputValue}}" bindinput="inputChangeHandle" bindconfirm="addTodoHandle" />
+  </view>
+  <view class="listBox">
+    <view class="item {{item.status ? 'completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" data-index="{{ index }}" bindtap="toggleToDoHangle">
+      <icon type="{{item.status ? 'success' : 'circle'}}" class="item-icon"></icon>
+      <text class="item-text ">{{item.name}}</text>
+      <icon type="clear" size="18" catchtap="removeHandle" data-index="{{ index }}"></icon>
+    </view>
+
+  </view>
+  <view class="footer">
+    <block wx:if="{{ todos.length}}">
+      <view class="item" bindtap="toggleAllHangle">Toogle all</view>
+      <view class="item" wx:if="{{leftCount}}">{{ leftCount }} {{leftCount>1 ? 'items' : 'item' }} left</view>
+      <view class="item" bindtap="removeAllHandle">Clear completed</view>
+    </block>
+    <view wx:else>
+      暂时没有内容呢
+    </view>
+  </view>
+
+
+</view>

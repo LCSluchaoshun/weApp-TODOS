@@ -1,0 +1,52 @@
+/* pages/index/index.wxss */
+.container{
+border-top: 1rpx solid #e0e0e0;
+}
+.inputBox{
+	border:1rpx solid #e0e0e0;
+	border-radius: 3rpx;
+	display: flex;
+	width: 100%;
+	padding: 10px;
+	align-items: center;
+	margin-bottom: 15rpx;
+}
+.inputBox image{
+	width: 40rpx;
+	height: 40rpx;
+	display: block;
+	padding-right: 10px;
+}
+.listBox{
+    padding: 5rpx;
+	
+}
+
+.listBox .item {
+	display: flex;
+	align-items: center;
+	border:1rpx solid #e0e0e0;
+    padding:15rpx; 
+	color: #444;
+	font-size: 30rpx;
+}
+.listBox .item:last-children{
+	border-bottom:0;
+}
+.listBox .item .item-text{
+	flex: 1;
+	margin-left: 8rpx;
+}
+
+.listBox .item.completed .item-text{
+	color: #888;
+	text-decoration: line-through;
+}
+
+
+.footer{
+	display: flex;
+	justify-content: space-around;
+	color: #444;
+	font-size: 30rpx;
+}
